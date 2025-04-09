@@ -15,29 +15,29 @@ This project is built with **FastAPI**, **SQLAlchemy**, and **Alembic**, and inc
 1. **Create a virtual environment and install the requirements**
    - Used `requirements/requirements.txt` to install FastAPI, Alembic, SQLAlchemy, and others.
 
-2. **Create data models - example with SQLAlchemy in `app/models.py`**
-   - Created `Business`, `Symptom`, and `BusinessSymptom` tables.
-
-3. **Design a database mockup based on `app/data/business_symptom_data.csv`**
+2. **Design a database mockup based on `app/data/business_symptom_data.csv`**
    - Reviewed and mapped CSV fields to the models.
-
-4. **Create an endpoint for importing a CSV file into the database**
-   - Endpoint: `POST /import-csv`
-   - Accepts `file` in `multipart/form-data`.
-
-5. **Create an endpoint that returns business and symptom data**
-    - Endpoint: `GET /symptoms`
-    - Endpoint should take two optional parameters - `business_id` & `diagnostic`**
-        - Both are query parameters in the `/symptoms` endpoint.
-    - Endpoint should return Business ID, Business Name, Symptom Code, Symptom Name, and Symptom Diagnostic values based on filters**
-        - Proper filtering using SQLAlchemy joins and conditionals.
-
-6. **Generate migration script and run migration to create database tables - Alembic files provided**
+   
+3. **Create data models - example with SQLAlchemy in `app/models.py`**
+   - Created `Business`, `Symptom`, and `BusinessSymptom` tables.
+   
+4. **Generate migration script and run migration to create database tables - Alembic files provided**
    - Ran:
      ```bash
      alembic revision --autogenerate -m "Initial tables"
      alembic upgrade head
      ```
+
+5. **Create an endpoint for importing a CSV file into the database**
+   - Endpoint: `POST /import-csv`
+   - Accepts `file` in `multipart/form-data`.
+
+6. **Create an endpoint that returns business and symptom data**
+    - Endpoint: `GET /symptoms`
+    - Endpoint should take two optional parameters - `business_id` & `diagnostic`**
+        - Both are query parameters in the `/symptoms` endpoint.
+    - Endpoint should return Business ID, Business Name, Symptom Code, Symptom Name, and Symptom Diagnostic values based on filters**
+        - Proper filtering using SQLAlchemy joins and conditionals.
 
 ---
 
@@ -49,9 +49,15 @@ cd interview-challenge-v2
 ```
 
 ### 2. Create & activate a virtual environment:
+Create the environment
 ```bash
 python -m venv venv
-venv\Scripts\activate    # On Windows
+```
+Activate the environment 
+```
+venv\Scripts\activate       # On Windows
+
+source venv/bin/activate    # On macOS/Linux
 ```
 
 ### 3. Install dependencies:
