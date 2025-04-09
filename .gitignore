@@ -1,0 +1,42 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Editor/IDE folders
+.vscode/
+.idea/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Alembic
+alembic/versions/*.pyc
+
+# Log files
+*.log
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Test results
+.coverage
+htmlcov/
+.tox/
+
+# Mypy / Pyright / Pyre / Coverage
+.mypy_cache/
+.pyright/
+.pyre/
+.pytest_cache/
+
+# Don't ignore the .env file
+!.env
